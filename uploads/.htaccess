@@ -1,0 +1,7 @@
+# Never execute scripts from /uploads/ — only serve static files.
+<IfModule mod_php.c>
+  php_flag engine off
+</IfModule>
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|cgi|sh|bash)$">
+  Require all denied
+</FilesMatch>
