@@ -1,0 +1,37 @@
+# Kids Store — Apache configuration
+
+# Send pretty URLs and missing dirs to index.php is not used; we rely on real PHP files.
+# These rules just block direct access to sensitive files and force HTTPS in production.
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Block access to includes, database SQL files, dotfiles
+  RewriteRule ^includes/      - [F,L]
+  RewriteRule ^database/      - [F,L]
+  RewriteRule \.(env|sql|md|json|lock)$ - [F,L]
+
+  # Optionally force HTTPS — uncomment in production
+  # RewriteCond %{HTTPS} off
+  # RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# Caching for static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css                "access plus 7 days"
+  ExpiresByType application/javascript  "access plus 7 days"
+  ExpiresByType image/png   "access plus 30 days"
+  ExpiresByType image/jpeg  "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/webp  "access plus 30 days"
+</IfModule>
+
+# Sane security headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options        "SAMEORIGIN"
+  Header set Referrer-Policy        "strict-origin-when-cross-origin"
+</IfModule>
