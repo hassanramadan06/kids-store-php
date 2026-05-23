@@ -1,5 +1,5 @@
 -- =============================================================
---  Kids Store — Sample / dummy data
+--  Luluat Almisbah — Sample / dummy data
 --  Default admin: username = admin   password = Admin@12345
 --  Default user : email    = user@example.com  password = User@12345
 -- =============================================================
@@ -202,11 +202,11 @@ SELECT p.id, CONCAT('assets/images/placeholder-', ((p.id + 2) % 6) + 1, '.svg'),
 
 -- ---------- settings -----------------------------------------
 INSERT INTO `settings` (`key_name`,`value`) VALUES
- ('site_name_ar','متجر الأطفال'),
- ('site_name_en','Kids Store'),
+ ('site_name_ar','لؤلؤة المصباح'),
+ ('site_name_en','Luluat Almisbah'),
  ('site_tagline_ar','كل ما يحتاجه طفلك في مكان واحد'),
  ('site_tagline_en','Everything your child needs in one place'),
- ('contact_email','contact@kidsstore.local'),
+ ('contact_email','contact@luluat-almisbah.local'),
  ('contact_phone','+20 100 000 0000'),
  ('whatsapp','+20 100 000 0000'),
  ('address_ar','شارع التحرير، القاهرة، مصر'),

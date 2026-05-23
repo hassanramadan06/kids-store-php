@@ -1,4 +1,4 @@
-/*  Kids Store — Admin panel JS.
+/*  Luluat Almisbah — Admin panel JS.
  *  - Sidebar toggle for mobile
  *  - Sales line chart (canvas, no external libs)
  */

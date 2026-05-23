@@ -1,5 +1,5 @@
 -- =============================================================
---  Kids Store — Children's Clothing & Baby Products eCommerce
+--  Luluat Almisbah — Children's Clothing & Baby Products eCommerce
 --  Database schema (MySQL 5.7+ / MariaDB 10.3+)
 -- =============================================================
 

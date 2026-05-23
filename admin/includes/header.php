@@ -17,8 +17,15 @@ $admin_title = $admin_title ?? 'Dashboard';
 <body class="admin">
 <aside class="admin__sidebar">
   <div class="admin__brand">
-    <svg viewBox="0 0 64 64" width="40" height="40"><circle cx="32" cy="32" r="30" fill="#ffd6e7"/><circle cx="32" cy="28" r="11" fill="#fff"/><circle cx="27" cy="27" r="2" fill="#3a2a3f"/><circle cx="37" cy="27" r="2" fill="#3a2a3f"/><path d="M27 33 q5 4 10 0" stroke="#3a2a3f" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-    <span>Kids Store</span>
+    <svg viewBox="0 0 64 64" width="40" height="40">
+      <path d="M52 14 a14 14 0 1 0 0 18 a10 10 0 0 1 0 -18 z" fill="#c8b6e2"/>
+      <circle cx="30" cy="34" r="14" fill="#fff" stroke="#f4a6b4" stroke-width="2"/>
+      <circle cx="26" cy="30" r="3.5" fill="#fff" opacity=".9"/>
+      <path d="M14 18 l1.5 4 l4 1.5 l-4 1.5 l-1.5 4 l-1.5 -4 l-4 -1.5 l4 -1.5 z" fill="#efc754"/>
+    </svg>
+    <span style="font-weight:800;">
+      <span style="color:#f4a6b4">L</span><span style="color:#ed8e7c">u</span><span style="color:#efc754">l</span><span style="color:#8fd5c0">u</span><span style="color:#c8b6e2">a</span><span style="color:#f3bc9e">t</span>
+    </span>
   </div>
   <nav class="admin__nav">
     <a class="<?= $admin_page === 'dashboard'  ? 'is-active' : '' ?>" href="<?= url('admin/index.php') ?>"><span class="ic ic-home"></span> Dashboard</a>

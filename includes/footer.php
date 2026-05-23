@@ -5,8 +5,8 @@
   <div class="container site-footer__grid">
     <div class="site-footer__col site-footer__brand">
       <div class="logo">
-        <span class="logo__text">
-          <strong><?= e($site_name) ?></strong>
+        <span class="logo__text logo__text--brand">
+          <strong class="brand-name"><?= brand_colored($site_name) ?></strong>
           <small><?= t('Kids fashion & baby essentials', 'ملابس الأطفال ومستلزمات الرضع') ?></small>
         </span>
       </div>
