@@ -1,21 +1,26 @@
 /* ============================================================
-   Kids Store — Admin panel stylesheet
+   Luluat Almisbah — Admin panel stylesheet
    ============================================================ */
 
 :root {
-  --pink-500: #ff6b9b;
-  --pink-600: #ee4d83;
-  --bg:       #f6f5f9;
+  --pink-500:  #f4a6b4;
+  --pink-600:  #e98598;
+  --coral-500: #ed8e7c;
+  --coral-600: #d97560;
+  --mint-500:  #8fd5c0;
+  --lavender-300: #cdbcec;
+  --amber-500: #efc754;
+  --bg:       #f4f7f6;
   --surface:  #ffffff;
-  --border:   #ece6f1;
-  --ink-50:   #f7f6f9;
-  --ink-100:  #efedf3;
-  --ink-300:  #bfb7c8;
-  --ink-500:  #6f6678;
-  --ink-700:  #3a2a3f;
-  --ink-900:  #21172a;
-  --shadow-1: 0 4px 14px rgba(58, 42, 63, .06);
-  --shadow-2: 0 12px 28px rgba(58, 42, 63, .10);
+  --border:   #ece2e6;
+  --ink-50:   #f4f7f6;
+  --ink-100:  #e6edec;
+  --ink-300:  #93aba8;
+  --ink-500:  #547370;
+  --ink-700:  #294e4a;
+  --ink-900:  #1a4a4a;
+  --shadow-1: 0 4px 14px rgba(26, 74, 74, .06);
+  --shadow-2: 0 12px 28px rgba(26, 74, 74, .10);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -26,7 +31,7 @@ a:hover { color: var(--pink-600); }
 table { border-collapse: collapse; width: 100%; }
 
 /* ---------------- Login -------------------------------------- */
-.admin-login { min-height: 100vh; display: grid; place-items: center; padding: 2rem; background: linear-gradient(135deg, #ffd6e7, #bee3ff); }
+.admin-login { min-height: 100vh; display: grid; place-items: center; padding: 2rem; background: linear-gradient(135deg, #f7ccd5, #cdbcec); }
 .admin-login__card { background: #fff; border-radius: 22px; padding: 2.25rem; max-width: 400px; width: 100%; box-shadow: var(--shadow-2); }
 .admin-login__brand { text-align: center; margin-bottom: 1.5rem; }
 .admin-login__brand svg { margin: 0 auto; }
@@ -44,7 +49,7 @@ table { border-collapse: collapse; width: 100%; }
 .admin__nav { display: flex; flex-direction: column; gap: .15rem; flex: 1; }
 .admin__nav a { display: flex; align-items: center; gap: .65rem; padding: .55rem .75rem; border-radius: 10px; color: rgba(255,255,255,.78); }
 .admin__nav a:hover { background: rgba(255,255,255,.08); color: #fff; }
-.admin__nav a.is-active { background: var(--pink-500); color: #fff; }
+.admin__nav a.is-active { background: var(--coral-500); color: #fff; }
 .admin__sidebar-footer { display: flex; justify-content: space-between; padding: .25rem; font-size: .85rem; color: rgba(255,255,255,.6); }
 .admin__sidebar-footer a:hover { color: #fff; }
 .admin__sidebar-footer .link-danger { color: #ffb1b1; }

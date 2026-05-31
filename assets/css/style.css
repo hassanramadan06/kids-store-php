@@ -1,44 +1,62 @@
 /* ============================================================
-   Kids Store — main stylesheet (storefront).
+   Luluat Almisbah — main stylesheet (storefront).
    Responsive: mobile-first, with breakpoints at 640 / 960 / 1200.
    RTL: handled with logical properties + a `.rtl` body class.
+   Brand palette: pink • coral • amber • mint • lavender • peach • deep teal.
    ============================================================ */
 
 /* ---------------- Tokens -------------------------------------- */
 :root {
-  --pink-50:  #fff5f9;
-  --pink-100: #ffe7f0;
-  --pink-200: #ffd6e7;
-  --pink-300: #ffadc8;
-  --pink-500: #ff6b9b;
-  --pink-600: #ee4d83;
+  /* Brand pink (primary) */
+  --pink-50:  #fdf3f5;
+  --pink-100: #fbe4ea;
+  --pink-200: #f7ccd5;
+  --pink-300: #f0a8b8;
+  --pink-500: #f4a6b4;
+  --pink-600: #e98598;
 
-  --mint-100: #e8fff7;
-  --mint-200: #cdf3e6;
-  --mint-300: #a7e8d8;
-  --mint-500: #4cc7a3;
+  /* Coral accent */
+  --coral-100: #fde6e0;
+  --coral-300: #f5b09e;
+  --coral-500: #ed8e7c;
+  --coral-600: #d97560;
 
-  --blue-100: #e9f5ff;
-  --blue-300: #bee3ff;
-  --blue-500: #5ba9ff;
+  /* Mint */
+  --mint-100: #e8f9f3;
+  --mint-200: #cdf0e3;
+  --mint-300: #a8e3cf;
+  --mint-500: #8fd5c0;
 
-  --amber-100: #fff8e1;
-  --amber-300: #ffe7a8;
-  --amber-500: #f5b400;
+  /* Lavender */
+  --lavender-100: #f1ebfb;
+  --lavender-200: #e0d4f3;
+  --lavender-300: #cdbcec;
+  --lavender-500: #c8b6e2;
 
-  --ink-50:  #f7f6f9;
-  --ink-100: #efedf3;
-  --ink-200: #ddd8e2;
-  --ink-300: #bfb7c8;
-  --ink-500: #6f6678;
-  --ink-700: #3a2a3f;
-  --ink-900: #21172a;
+  /* Peach */
+  --peach-100: #fdeee2;
+  --peach-300: #f8d3b8;
+  --peach-500: #f3bc9e;
 
-  --bg:       #fffdfb;
+  /* Amber / sun */
+  --amber-100: #fff5dc;
+  --amber-300: #f9e0a0;
+  --amber-500: #efc754;
+
+  /* Deep teal — used for text + footer */
+  --ink-50:  #f4f7f6;
+  --ink-100: #e6edec;
+  --ink-200: #c8d6d4;
+  --ink-300: #93aba8;
+  --ink-500: #547370;
+  --ink-700: #294e4a;
+  --ink-900: #1a4a4a;
+
+  --bg:       #fdfaf6;
   --surface:  #ffffff;
-  --border:   #ece6f1;
-  --shadow-1: 0 4px 14px rgba(58, 42, 63, .06);
-  --shadow-2: 0 12px 28px rgba(58, 42, 63, .10);
+  --border:   #ece2e6;
+  --shadow-1: 0 4px 14px rgba(26, 74, 74, .06);
+  --shadow-2: 0 12px 28px rgba(26, 74, 74, .10);
 
   --radius-sm: 8px;
   --radius:    14px;
@@ -85,8 +103,8 @@ input, select, textarea { font: inherit; }
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
 }
 .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-1); }
-.btn--primary { --btn-bg: var(--pink-500); --btn-fg: #fff; }
-.btn--primary:hover { --btn-bg: var(--pink-600); color: #fff; }
+.btn--primary { --btn-bg: var(--coral-500); --btn-fg: #fff; }
+.btn--primary:hover { --btn-bg: var(--coral-600); color: #fff; }
 .btn--ghost  { --btn-bg: transparent; --btn-fg: var(--ink-700); border: 1px solid var(--border); }
 .btn--white  { --btn-bg: #fff; --btn-fg: var(--ink-900); }
 .btn--lg     { padding: .9rem 1.5rem; font-size: 1.0625rem; }
@@ -95,7 +113,7 @@ input, select, textarea { font: inherit; }
 
 /* ---------------- Top bar ------------------------------------- */
 .topbar {
-  background: linear-gradient(135deg, var(--pink-200), var(--blue-300));
+  background: linear-gradient(135deg, var(--pink-200), var(--lavender-300));
   font-size: .85rem;
 }
 .topbar__inner { display: flex; justify-content: space-between; align-items: center; padding: .5rem 0; }
@@ -111,6 +129,12 @@ input, select, textarea { font: inherit; }
 .logo { display: inline-flex; align-items: center; gap: .65rem; }
 .logo__text strong { display: block; font-size: 1.1rem; font-weight: 800; color: var(--ink-900); line-height: 1; }
 .logo__text small { display: block; color: var(--ink-500); font-size: .75rem; margin-top: .2rem; }
+.brand-name { font-family: 'Poppins', var(--font-sans); font-weight: 800; font-size: 1.25rem; letter-spacing: .01em; line-height: 1; }
+body.rtl .brand-name { font-family: 'Cairo', var(--font-ar); font-size: 1.35rem; letter-spacing: 0; }
+/* Arabic letters must stay as natural inline text so ligatures connect. */
+body.rtl .brand-name span { display: inline; }
+.logo__text--brand small { color: var(--ink-500); font-size: .72rem; margin-top: .35rem; letter-spacing: .04em; text-transform: uppercase; }
+body.rtl .logo__text--brand small { text-transform: none; letter-spacing: 0; }
 
 .search { display: flex; align-items: center; position: relative; background: var(--ink-50); border-radius: 999px; border: 1px solid var(--border); padding: .35rem; }
 .search input { flex: 1; border: 0; background: transparent; padding: .35rem .85rem; font-size: .95rem; outline: none; min-width: 0; }
@@ -239,7 +263,7 @@ input, select, textarea { font: inherit; }
 .wish-btn.is-active svg { fill: currentColor; stroke: currentColor; }
 
 /* ---------------- Banner strip ------------------------------- */
-.banner-strip { background: linear-gradient(135deg, var(--mint-200), var(--blue-300)); padding: 3rem 0; }
+.banner-strip { background: linear-gradient(135deg, var(--mint-200), var(--lavender-300)); padding: 3rem 0; }
 .banner-strip__inner { display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 2rem; }
 .banner-strip h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); margin: 0 0 .5rem; }
 
@@ -367,7 +391,7 @@ input, select, textarea { font: inherit; }
 
 .status { display: inline-block; padding: .15rem .55rem; border-radius: 999px; font-size: .8rem; font-weight: 600; }
 .status--pending    { background: var(--amber-100); color: #8a6300; }
-.status--processing { background: var(--blue-100);  color: #1f5e9b; }
+.status--processing { background: var(--lavender-100); color: var(--ink-700); }
 .status--shipped    { background: var(--mint-100);  color: #1d6b53; }
 .status--delivered  { background: var(--mint-200);  color: #145a44; }
 .status--cancelled  { background: #ffe6ea; color: #a8333d; }
@@ -411,7 +435,7 @@ input, select, textarea { font: inherit; }
 .toast.show { transform: none; opacity: 1; }
 .toast--success { border-inline-start: 4px solid var(--mint-500); }
 .toast--error   { border-inline-start: 4px solid var(--pink-500); }
-.toast--info    { border-inline-start: 4px solid var(--blue-500); }
+.toast--info    { border-inline-start: 4px solid var(--lavender-500); }
 
 /* ---------------- Tiny icons --------------------------------- */
 .ic { display: inline-block; width: 18px; height: 18px; vertical-align: -3px; background: currentColor; -webkit-mask-position: center; mask-position: center; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain; }

@@ -1,8 +1,8 @@
-# Kids Store — PHP / MySQL eCommerce
+# Luluat Almisbah — PHP / MySQL eCommerce
 
 A complete, production-ready eCommerce website for **children's clothing &
-baby products**, built with **pure PHP 8**, **MySQL**, **vanilla JavaScript**
-and **HTML5 / CSS3** — no frameworks, no build step.
+baby products** (originally shipped as "Kids Store"), built with **pure PHP 8**,
+**MySQL**, **vanilla JavaScript** and **HTML5 / CSS3** — no frameworks, no build step.
 
 | | |
 | --- | --- |

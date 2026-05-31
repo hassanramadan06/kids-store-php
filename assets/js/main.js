@@ -1,4 +1,4 @@
-/*  Kids Store — storefront vanilla JS.
+/*  Luluat Almisbah — storefront vanilla JS.
  *  - Hero slider (auto-play + manual)
  *  - Toast notifications
  *  - AJAX cart / wishlist

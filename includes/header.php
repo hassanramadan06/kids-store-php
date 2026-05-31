@@ -9,7 +9,7 @@
 require_once __DIR__ . '/init.php';
 
 $page_title       = $page_title       ?? $site_name;
-$page_description = $page_description ?? t('Children clothing & baby products store', 'متجر ملابس الأطفال ومستلزمات حديثي الولادة');
+$page_description = $page_description ?? t('Luluat Almisbah — children clothing & baby products', 'لؤلؤة المصباح — متجر ملابس الأطفال ومستلزمات حديثي الولادة');
 
 $nav_sections = get_sections();
 foreach ($nav_sections as &$_s) {
@@ -23,7 +23,7 @@ unset($_s);
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="<?= e($page_description) ?>">
-<meta name="theme-color" content="#ffd6e7">
+<meta name="theme-color" content="#f4a6b4">
 <title><?= e($page_title) ?> — <?= e($site_name) ?></title>
 
 <link rel="icon" type="image/svg+xml" href="<?= url('assets/images/favicon.svg') ?>">
@@ -62,19 +62,22 @@ unset($_s);
 <!-- Main header -------------------------------------------------- -->
 <header class="site-header">
   <div class="container site-header__inner">
-    <a href="<?= url('') ?>" class="logo" aria-label="<?= e($site_name) ?>">
+    <a href="<?= url('') ?>" class="logo logo--brand" aria-label="<?= e($site_name) ?>">
       <span class="logo__mark" aria-hidden="true">
-        <svg viewBox="0 0 64 64" width="44" height="44">
-          <circle cx="32" cy="32" r="30" fill="#ffd6e7"/>
-          <circle cx="32" cy="28" r="11" fill="#fff"/>
-          <circle cx="27" cy="27" r="2" fill="#3a2a3f"/>
-          <circle cx="37" cy="27" r="2" fill="#3a2a3f"/>
-          <path d="M27 33 q5 4 10 0" stroke="#3a2a3f" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path d="M19 49 q13 -10 26 0 v6 H19 z" fill="#a7e8d8"/>
+        <svg viewBox="0 0 64 64" width="48" height="48">
+          <!-- moon -->
+          <path d="M52 14 a14 14 0 1 0 0 18 a10 10 0 0 1 0 -18 z" fill="#c8b6e2"/>
+          <!-- pearl -->
+          <circle cx="30" cy="34" r="14" fill="#fdfaf6" stroke="#f4a6b4" stroke-width="2"/>
+          <circle cx="26" cy="30" r="3.5" fill="#fff" opacity=".9"/>
+          <!-- sparkles -->
+          <path d="M14 18 l1.5 4 l4 1.5 l-4 1.5 l-1.5 4 l-1.5 -4 l-4 -1.5 l4 -1.5 z" fill="#efc754"/>
+          <path d="M48 50 l1 2.5 l2.5 1 l-2.5 1 l-1 2.5 l-1 -2.5 l-2.5 -1 l2.5 -1 z" fill="#ed8e7c"/>
+          <path d="M50 36 l.8 2 l2 .8 l-2 .8 l-.8 2 l-.8 -2 l-2 -.8 l2 -.8 z" fill="#8fd5c0"/>
         </svg>
       </span>
-      <span class="logo__text">
-        <strong><?= e($site_name) ?></strong>
+      <span class="logo__text logo__text--brand">
+        <strong class="brand-name"><?= brand_colored($site_name) ?></strong>
         <small><?= t('Kids fashion & baby essentials', 'ملابس الأطفال ومستلزمات الرضع') ?></small>
       </span>
     </a>

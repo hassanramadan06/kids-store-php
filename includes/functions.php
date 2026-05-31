@@ -77,6 +77,26 @@ function t(string $en, ?string $ar = null): string
     return is_ar() ? ($ar ?? $en) : $en;
 }
 
+/**
+ * Render a brand-style multi-color text by wrapping each non-space character
+ * in a span cycling through the brand palette. Works for AR + EN.
+ */
+function brand_colored(string $text): string
+{
+    static $palette = ['#f4a6b4', '#ed8e7c', '#efc754', '#8fd5c0', '#c8b6e2', '#f3bc9e'];
+    $out = '';
+    $i   = 0;
+    // mb_str_split keeps multibyte (Arabic) chars intact.
+    $chars = preg_split('//u', $text, -1, PREG_SPLIT_NO_EMPTY) ?: [];
+    foreach ($chars as $ch) {
+        if (trim($ch) === '') { $out .= '&nbsp;'; continue; }
+        $color = $palette[$i % count($palette)];
+        $out  .= '<span style="color:' . $color . '">' . htmlspecialchars($ch, ENT_QUOTES, 'UTF-8') . '</span>';
+        $i++;
+    }
+    return $out;
+}
+
 // ---------------------------------------------------------------
 // Money
 // ---------------------------------------------------------------

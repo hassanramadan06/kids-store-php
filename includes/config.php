@@ -22,8 +22,8 @@ define('DB_CHARSET', 'utf8mb4');
 // ---------------------------------------------------------------
 // Site
 // ---------------------------------------------------------------
-define('SITE_NAME_AR', 'متجر الأطفال');
-define('SITE_NAME_EN', 'Kids Store');
+define('SITE_NAME_AR', 'لؤلؤة المصباح');
+define('SITE_NAME_EN', 'Luluat Almisbah');
 define('DEFAULT_LANG', 'ar');                       // 'ar' or 'en'
 define('CURRENCY_AR', 'ج.م');
 define('CURRENCY_EN', 'EGP');
